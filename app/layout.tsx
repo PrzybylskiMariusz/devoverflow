@@ -1,6 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 // eslint-disable-next-line camelcase
+import { ThemeProvider } from "@/context/ThemeProvider";
 import { Inter, Space_Grotesk } from "next/font/google";
 import React from "react";
 import "./globals.css";
@@ -41,7 +42,7 @@ export default function RootLayout({
 							footerActionLink: "primary-text-gradient hover:text-primary-500",
 						},
 					}}>
-					{children}
+					<ThemeProvider>{children}</ThemeProvider>
 				</ClerkProvider>
 			</body>
 		</html>
